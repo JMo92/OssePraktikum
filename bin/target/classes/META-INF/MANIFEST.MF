@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Built-By: uic31018
+Build-Jdk: 17
+Main-Class: de.hfu.IHREHAUPTKLASSE
+Created-By: Maven Integration for Eclipse
+
