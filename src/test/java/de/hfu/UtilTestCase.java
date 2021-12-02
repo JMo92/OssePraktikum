@@ -6,27 +6,29 @@ import org.junit.Test;
 
 public class UtilTestCase {
 
-	@Test
-	public void testGutFaelle() {
-		Util testCase = new Util();
-		assertEquals(true, testCase.istErstesHalbjahr(1));
-		assertEquals(true, testCase.istErstesHalbjahr(2));
-		assertEquals(true, testCase.istErstesHalbjahr(3));
-		assertEquals(true, testCase.istErstesHalbjahr(4));
-		assertEquals(true, testCase.istErstesHalbjahr(5));
-		assertEquals(true, testCase.istErstesHalbjahr(6));
-	}
-
-	@Test
-	public void testSchlechtFaelle() {
-		Util testCase = new Util();
-		assertEquals(false, testCase.istErstesHalbjahr(7));
-		assertEquals(false, testCase.istErstesHalbjahr(8));
-		assertEquals(false, testCase.istErstesHalbjahr(9));
-		assertEquals(false, testCase.istErstesHalbjahr(10));
-		assertEquals(false, testCase.istErstesHalbjahr(11));
-		assertEquals(false, testCase.istErstesHalbjahr(12));
-	}
-
+	/**
+    * Teste ob istErstesHalbjahr funktioniert.
+    */
+   @Test
+   public void testErstesHalbjahr() {
+       assertTrue(Util.istErstesHalbjahr(1));
+       assertTrue(Util.istErstesHalbjahr(6));
+       assertFalse(Util.istErstesHalbjahr(7));
+       assertFalse(Util.istErstesHalbjahr(12));
+   }
+   /**
+    * Teste ob Ausnahme bei 0 geworfen wird.
+    */
+   @Test(expected=IllegalArgumentException.class, timeout=1000) 
+   public void testUngueltigeEingabe0() { 
+       Util.istErstesHalbjahr(0);
+   }
+   /**
+    * Teste ob Ausnahme bei 13 geworfen wird.
+    */
+   @Test(expected=IllegalArgumentException.class, timeout=1000) 
+   public void testUngueltigeEingabe13() { 
+       Util.istErstesHalbjahr(13);
+   }
 
 }
